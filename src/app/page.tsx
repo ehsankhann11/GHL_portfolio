@@ -231,7 +231,7 @@ export default function Home() {
           <h4 className="font-black text-2xl uppercase tracking-tight mb-2">GHL VA Service</h4>
           <p className="text-gray-400 text-sm mb-4">Give me your account — let me automate it</p>
           <div className="text-4xl font-black text-blue-500">
-            $1,200<span className="text-lg text-gray-500">/month</span>
+            $800<span className="text-lg text-gray-500">/month</span>
           </div>
         </div>
 

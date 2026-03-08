@@ -23,7 +23,7 @@ export default function PricingSection() {
               📦 Starter Package
             </div>
             <div className="text-5xl font-black mb-2">
-              $800
+              $600
               <span className="text-lg text-gray-500"> / project</span>
             </div>
             <p className="text-gray-400 text-sm mb-6">48-72hr delivery</p>
@@ -34,7 +34,7 @@ export default function PricingSection() {
               <li>✓ Email / SMS Sequences</li>
               <li>✓ Calendar Integration</li>
             </ul>
-            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20Starter%20Package%20at%20$800" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-white text-black rounded-xl font-bold hover:bg-blue-600 hover:text-white transition">
+            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20Starter%20Package%20at%20$600" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-white text-black rounded-xl font-bold hover:bg-blue-600 hover:text-white transition">
               Get Started
             </a>
           </div>
@@ -48,7 +48,7 @@ export default function PricingSection() {
               ⭐ Automation System
             </div>
             <div className="text-5xl font-black mb-2">
-              $1,500
+              $1,000
               <span className="text-lg text-gray-500"> / system</span>
             </div>
             <p className="text-gray-400 text-sm mb-6">48-72hr delivery</p>
@@ -59,7 +59,7 @@ export default function PricingSection() {
               <li>✓ Webhook Automations</li>
               <li>✓ GHL API Custom Logic</li>
             </ul>
-            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20Automation%20System%20at%20$1,500" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-blue-600 rounded-xl font-bold hover:scale-105 transition">
+            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20Automation%20System%20at%20$1,000" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-blue-600 rounded-xl font-bold hover:scale-105 transition">
               Get Started
             </a>
           </div>
@@ -70,7 +70,7 @@ export default function PricingSection() {
               🧠 GHL VA — Monthly
             </div>
             <div className="text-5xl font-black mb-2">
-              $1,200
+              $800
               <span className="text-lg text-gray-500"> / month</span>
             </div>
             <p className="text-gray-400 text-sm mb-6">Ongoing partnership</p>
@@ -81,7 +81,7 @@ export default function PricingSection() {
               <li>✓ Client Sub-accounts</li>
               <li>✓ White-Label Support</li>
             </ul>
-            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20GHL%20VA%20service%20at%20$1,200/mo" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-white/10 border border-white/20 rounded-xl font-bold hover:bg-white hover:text-black transition">
+            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20GHL%20VA%20service%20at%20$800/mo" target="_blank" rel="noopener noreferrer" className="block w-full text-center py-4 bg-white/10 border border-white/20 rounded-xl font-bold hover:bg-white hover:text-black transition">
               Hire Me
             </a>
           </div>

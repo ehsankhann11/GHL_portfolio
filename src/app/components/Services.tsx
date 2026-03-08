@@ -3,37 +3,37 @@ export default function Services() {
       {
         title: "GHL CRM Engineering",
         desc: "Complete GoHighLevel ecosystem setup: complex pipelines, synchronized calendars, and multi-channel integrations.",
-        price: "$800",
+        price: "$600",
         icon: "🏗️"
       },
       {
         title: "AI-Powered Automation",
         desc: "Intelligent RAG chatbots, autonomous lead qualification, and smart logic workflows built with Python & GHL API.",
-        price: "$1,500",
+        price: "$1,000",
         icon: "🤖"
       },
       {
         title: "Conversion Funnels",
         desc: "High-performance landing pages and funnels engineered inside GHL with advanced tracking and behavioral triggers.",
-        price: "$700",
+        price: "$500",
         icon: "🚀"
       },
       {
         title: "Advanced Workflows",
         desc: "Deep-level automation, custom webhook triggers, lead nurturing sequences, and API-driven follow-up systems.",
-        price: "$900",
+        price: "$650",
         icon: "⚙️"
       },
       {
         title: "Agency White Label",
         desc: "Scalable backend support for agencies. I manage your clients' high-level accounts as your invisible tech partner.",
-        price: "$1,200/mo",
+        price: "$800/mo",
         icon: "🎭"
       },
       {
         title: "Custom Development",
         desc: "Every system is built from scratch for your business. No generic templates — just tailored automation.",
-        price: "Starting at $500",
+        price: "Starting at $350",
         icon: "💎"
       }
     ];

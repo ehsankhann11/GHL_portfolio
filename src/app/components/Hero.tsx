@@ -32,8 +32,8 @@ export default function Hero() {
           </p>
           {/* 4. Action Buttons */}
           <div className="flex flex-col md:flex-row gap-5 w-full md:w-auto animate-fade-in delay-300">
-            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20GHL%20VA%20service%20at%20$1,200/mo" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-12 py-5 rounded-2xl font-black text-center uppercase tracking-widest hover:bg-blue-700 hover:scale-105 transition-all shadow-xl shadow-blue-600/20" >
-              Hire GHL VA — $1,200/mo
+            <a href="https://wa.me/923185164128?text=Hi%20Ehsan,%20I%20am%20interested%20in%20the%20GHL%20VA%20service%20at%20$800/mo" target="_blank" rel="noopener noreferrer" className="bg-blue-600 text-white px-12 py-5 rounded-2xl font-black text-center uppercase tracking-widest hover:bg-blue-700 hover:scale-105 transition-all shadow-xl shadow-blue-600/20" >
+              Hire GHL VA — $800/mo
             </a>
             <a href="#pricing" className="bg-white/5 border border-white/10 text-white px-12 py-5 rounded-2xl font-black text-center uppercase tracking-widest hover:bg-white/10 transition-all" >
               Get Automation System
