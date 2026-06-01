@@ -63,24 +63,20 @@ export default function ContactBookingSection() {
           </div>
         </div>
 
-        <div className="glass-card rounded-[2.5rem] border border-white/5 p-6 md:p-8">
+        <div className="glass-card rounded-[2.5rem] border border-white/5 p-6 md:p-8 flex flex-col h-full">
           <div className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4">
-            Calendar Embed (Placeholder)
+            Select a Time
           </div>
-          <div className="border border-white/10 rounded-3xl overflow-hidden bg-black/20">
-            <div className="p-6 text-center">
-              <div className="text-4xl mb-3">📅</div>
-              <div className="font-black uppercase tracking-tight mb-2">Insert your booking calendar iframe</div>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                Replace this block with your calendar provider embed URL (e.g., Google Calendar Appointment Schedule,
-                Calendly, or any iframe-based booking tool).
-              </p>
-            </div>
-            <div className="border-t border-white/10 p-4">
-              <code className="text-[11px] text-gray-500 break-words">
-                <iframe src="YOUR_CALENDAR_EMBED_URL" title="Book a consultation" className="w-full" />
-              </code>
-            </div>
+          
+          <div className="flex-grow w-full bg-white/[0.02] rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+            <iframe 
+              src="https://calendar.google.com/calendar/embed?src=ehsanmarwat.dev%40gmail.com&ctz=Asia%2FKarachi" 
+              style={{ border: 0, width: '100%', height: '600px' }} 
+              frameBorder="0" 
+              scrolling="no"
+              className="bg-white w-full h-full min-h-[600px]"
+              title="Strategy Call Calendar"
+            ></iframe>
           </div>
 
           <div className="mt-6 text-center text-gray-500 text-xs uppercase tracking-[0.4em]">
@@ -91,4 +87,3 @@ export default function ContactBookingSection() {
     </section>
   );
 }
-
