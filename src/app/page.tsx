@@ -1,8 +1,12 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Services from "./components/Services";
 import ReadyToAutomate from "./components/ReadyToAutomate";
 import PricingSection from "./components/PricingSection";
+import CoreServicesDetailed from "./components/CoreServicesDetailed";
+import CaseStudiesSection from "./components/CaseStudiesSection";
+import AboutCredentials from "./components/AboutCredentials";
+import ContactBookingSection from "./components/ContactBookingSection";
+
 
 export const metadata = {
   title: "Ehsan Ud Din | GHL Automation Engineer",
@@ -31,99 +35,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SERVICES */}
+      {/* CORE SERVICES */}
 
-      <Services />
+      <CoreServicesDetailed />
 
-      {/* CASE STUDIES - Proof of Results */}
+      {/* FEATURED CASE STUDIES */}
 
-      <section id="case-studies" className="py-24 md:py-32 px-6 max-w-7xl mx-auto">
-        
-        <div className="text-center mb-16">
-          <h2 className="text-sm uppercase tracking-[0.4em] text-blue-500 mb-6 font-bold">
-            Real Results
-          </h2>
-          <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-6 leading-[0.9]">
-            Problems Solved
-          </h3>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-            See how I've helped businesses automate their sales and scale their operations.
-          </p>
-        </div>
+      <CaseStudiesSection />
 
-        <div className="grid md:grid-cols-3 gap-8">
+      {/* ABOUT & CREDENTIALS */}
 
-          {/* Case Study 1 */}
-          <div className="p-8 border border-white/10 bg-neutral-900/50 rounded-3xl hover:border-blue-500/30 transition-all group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-500 text-xl">
-                🏢
-              </div>
-              <div>
-                <h4 className="font-black text-xl">Real Estate Agency</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Lead Generation</p>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-              Client was manually following up with leads, losing 60% of potential deals. Built automated follow-up sequence with AI voice + SMS that booked 15 calls per week.
-            </p>
-            <div className="pt-4 border-t border-white/5">
-              <span className="text-blue-500 font-bold text-2xl">+340%</span>
-              <span className="text-gray-500 text-sm ml-2">Lead Response Rate</span>
-            </div>
-          </div>
+      <AboutCredentials />
 
-          {/* Case Study 2 */}
-          <div className="p-8 border border-white/10 bg-neutral-900/50 rounded-3xl hover:border-blue-500/30 transition-all group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-green-600/20 rounded-xl flex items-center justify-center text-green-500 text-xl">
-                🏥
-              </div>
-              <div>
-                <h4 className="font-black text-xl">Dental Clinic</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Appointment Booking</p>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-              Practice was losing patients due to manual booking. Integrated AI chatbot that handled 24/7 bookings, reducing staff workload by 70%.
-            </p>
-            <div className="pt-4 border-t border-white/5">
-              <span className="text-green-500 font-bold text-2xl">$12K/mo</span>
-              <span className="text-gray-500 text-sm ml-2">Revenue Recovered</span>
-            </div>
-          </div>
+      {/* CONTACT / BOOKING */}
 
-          {/* Case Study 3 */}
-          <div className="p-8 border border-white/10 bg-neutral-900/50 rounded-3xl hover:border-blue-500/30 transition-all group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-12 bg-purple-600/20 rounded-xl flex items-center justify-center text-purple-500 text-xl">
-                🚀
-              </div>
-              <div>
-                <h4 className="font-black text-xl">Marketing Agency</h4>
-                <p className="text-xs text-gray-500 uppercase tracking-wider">Client Onboarding</p>
-              </div>
-            </div>
-            <p className="text-gray-400 mb-6 text-sm leading-relaxed">
-              Agency was spending 20hrs/week on client onboarding. Automated entire flow with GHL workflows, freeing up team to focus on delivery.
-            </p>
-            <div className="pt-4 border-t border-white/5">
-              <span className="text-purple-500 font-bold text-2xl">20hrs</span>
-              <span className="text-gray-500 text-sm ml-2">Saved Per Week</span>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="text-center mt-12">
-          <a href="#pricing" className="inline-block border border-blue-500 text-blue-500 px-8 py-4 rounded-xl font-bold hover:bg-blue-500 hover:text-black transition">
-            View Pricing
-          </a>
-        </div>
-
-      </section>
+      <ContactBookingSection />
 
       {/* WHO I WORK WITH */}
+
 
       <section className="py-24 px-6 bg-white/[0.02] border-y border-white/5">
         <div className="max-w-7xl mx-auto text-center">
@@ -220,8 +149,9 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-black text-xl uppercase tracking-tight mb-2">Dedicated Support</h4>
-              <p className="text-gray-400 text-sm">WhatsApp / Email / Quick Adjustments. I'm just a message away.</p>
+<p className="text-gray-400 text-sm">I&apos;m just a message away.</p>
             </div>
+
           </div>
 
         </div>
@@ -305,7 +235,10 @@ export default function Home() {
               Built From Scratch For Your Business
             </h3>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-              I don't use generic templates. Every automation system is tailored to your specific business needs, workflows, and goals. What I build is 100% yours — white-label, always.
+What I build is 100% yours — white-label, always.
+
+
+
             </p>
           </div>
 
@@ -449,7 +382,7 @@ export default function Home() {
             </div>
             <h4 className="text-xl font-black uppercase tracking-tight mb-4">System Deploy</h4>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Build & integrate the automation system within 48-72 hours. Full white-label — it's your system.
+Build & integrate the automation system within 48-72 hours. Full white-label — it&apos;s your system.
             </p>
           </div>
 

@@ -110,8 +110,9 @@ export default function Modal({ isOpen, onClose, title = "Let's Get Started", pr
                   <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-green-500 text-4xl mx-auto mb-6">
                     ✓
                   </div>
-                  <h4 className="text-2xl font-black uppercase tracking-tight mb-4">Thank You!</h4>
-                  <p className="text-gray-400">I'll review your request and get back to you within 24 hours.</p>
+      <h4 className="text-2xl font-black uppercase tracking-tight mb-4">Thank You!</h4>
+                  <p className="text-gray-400">I&apos;ll review your request and get back to you within 24 hours.</p>
+
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="p-6 space-y-4">

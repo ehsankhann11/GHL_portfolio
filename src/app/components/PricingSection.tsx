@@ -1,13 +1,8 @@
 'use client';
 
-import { useModal } from "./ClientProviders";
-
 export default function PricingSection() {
-  const { openModal } = useModal();
-
   return (
     <section id="pricing" className="py-32 bg-white/[0.02] border-y border-white/5">
-
       <div className="max-w-7xl mx-auto px-6 text-center">
 
         <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-6">
@@ -87,10 +82,7 @@ export default function PricingSection() {
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }
-
