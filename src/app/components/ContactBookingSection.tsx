@@ -1,6 +1,10 @@
 'use client';
 
+import { useModal } from './ClientProviders';
+
 export default function ContactBookingSection() {
+  const { openModal } = useModal();
+
   return (
     <section id="contact" className="py-24 md:py-32 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-16">
@@ -46,13 +50,13 @@ export default function ContactBookingSection() {
               Scheduling a call locks your next steps before the pipeline degrades again.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <a
-                href="#"
-                onClick={(e) => e.preventDefault()}
+              <button
+                type="button"
+                onClick={() => openModal()}
                 className="inline-flex items-center justify-center px-6 py-3 rounded-2xl bg-blue-600 text-white font-black uppercase tracking-widest hover:bg-blue-700 transition"
               >
-                Book a Consultation
-              </a>
+                Send Project Details
+              </button>
               <a
                 href="#case-studies"
                 className="inline-flex items-center justify-center px-6 py-3 rounded-2xl border border-white/10 bg-white/[0.03] text-white font-black uppercase tracking-widest hover:bg-white/[0.06] hover:border-blue-500/40 transition"

@@ -1,11 +1,20 @@
 'use client';
 
+import { Workflow, MessagesSquare, Bot, Blocks, type LucideIcon } from 'lucide-react';
+
 export default function CoreServicesDetailed() {
-  const services = [
+  const services: {
+    eyebrow: string;
+    title: string;
+    icon: LucideIcon;
+    bullets: string[];
+    outcomes: { k: string; v: string; label: string }[];
+    ctaHref: string;
+  }[] = [
     {
       eyebrow: "GoHighLevel (GHL) Architecture",
       title: "A to Z CRM Automation — Built to Convert",
-      icon: "🏗️",
+      icon: Workflow,
       bullets: [
         "Complete GHL setup: pipelines, calendars, contact sync, and integrations",
         "Custom snapshot development so every client account runs clean",
@@ -22,7 +31,7 @@ export default function CoreServicesDetailed() {
     {
       eyebrow: "Multi-Channel Workflows",
       title: "SMS + Email Automations That Never Miss a Lead",
-      icon: "📲",
+      icon: MessagesSquare,
       bullets: [
         "Design complex multi-step sequences across SMS, email, and internal workflows",
         "Smart branching for intent, source, and stage (so follow-up is always relevant)",
@@ -39,7 +48,7 @@ export default function CoreServicesDetailed() {
     {
       eyebrow: "AI Agents & Voice Bots",
       title: "24/7 Lead Qualification + Support (Without Hiring More Team)",
-      icon: "🤖",
+      icon: Bot,
       bullets: [
         "AI chatbot widgets powered by n8n workflows + LLM logic",
         "AI Voice Call Bots for first-contact support and qualification",
@@ -56,7 +65,7 @@ export default function CoreServicesDetailed() {
     {
       eyebrow: "Full-Stack & SaaS Development",
       title: "Internal Tools & Platforms Your Team Can Actually Use",
-      icon: "🧩",
+      icon: Blocks,
       bullets: [
         "Build robust web apps and operational dashboards tied directly into your automations",
         "Create SaaS platforms for repeatable delivery and scalable onboarding",
@@ -93,8 +102,8 @@ export default function CoreServicesDetailed() {
             <div className="p-8 md:p-10">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                 <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 rounded-3xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-2xl">
-                    {s.icon}
+                  <div className="w-14 h-14 rounded-3xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-500">
+                    <s.icon className="w-6 h-6" strokeWidth={1.75} />
                   </div>
                   <div>
                     <div className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-2">

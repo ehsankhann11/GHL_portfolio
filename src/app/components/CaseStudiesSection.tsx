@@ -1,5 +1,9 @@
 'use client';
 
+import { Building2, Smartphone, Mail, Wrench, Brain } from 'lucide-react';
+
+const caseStudyIcons = [Building2, Smartphone, Mail, Wrench, Brain];
+
 type CaseStudy = {
   eyebrow: string;
   client: string;
@@ -160,8 +164,11 @@ export default function CaseStudiesSection() {
                 <h4 className="font-black text-2xl leading-tight mb-2">{cs.client}</h4>
                 <p className="text-sm text-gray-500 uppercase tracking-wider">{cs.role}</p>
               </div>
-              <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-2xl">
-                {idx === 0 ? '🏢' : idx === 1 ? '📲' : idx === 2 ? '✉️' : idx === 3 ? '🔧' : '🧠'}
+              <div className="w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-blue-400">
+                {(() => {
+                  const CaseIcon = caseStudyIcons[idx] ?? Building2;
+                  return <CaseIcon className="w-6 h-6" strokeWidth={1.75} />;
+                })()}
               </div>
             </div>
 

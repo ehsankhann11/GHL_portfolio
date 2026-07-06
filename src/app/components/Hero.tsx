@@ -1,5 +1,7 @@
 'use client';
 
+import { Zap } from 'lucide-react';
+
 export default function Hero() {
   return (
     <section className="mesh-gradient relative min-h-screen flex flex-col items-center justify-center pt-32 pb-16 px-6 overflow-hidden">
@@ -11,7 +13,7 @@ export default function Hero() {
       </div>
 
       <div className="mb-6 flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm">
-        <span className="text-blue-500">⚡</span>
+        <Zap className="w-3.5 h-3.5 text-blue-500" strokeWidth={2} />
         <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-gray-400">AI Integrations · GHL Architecture · Full-Stack Automation</span>
       </div>
 

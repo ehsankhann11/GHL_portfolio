@@ -1,5 +1,7 @@
 'use client';
 
+import { BrainCircuit, Award, GraduationCap, Building2 } from 'lucide-react';
+
 export default function AboutCredentials() {
   return (
     <section className="py-24 md:py-32 px-6 max-w-7xl mx-auto">
@@ -16,8 +18,8 @@ export default function AboutCredentials() {
       <div className="grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 glass-card rounded-[2.5rem] border border-white/5 p-8 md:p-10">
           <div className="flex items-start gap-6 mb-6">
-            <div className="w-14 h-14 rounded-3xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-3xl">
-              🧠
+            <div className="w-14 h-14 rounded-3xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-500">
+              <BrainCircuit className="w-7 h-7" strokeWidth={1.75} />
             </div>
             <div>
               <h4 className="font-black text-3xl uppercase tracking-tight mb-2">Full-Stack AI & Automation Engineer</h4>
@@ -58,21 +60,21 @@ export default function AboutCredentials() {
         <div className="grid gap-6">
           <div className="glass-card rounded-[2.5rem] border border-white/5 p-8">
             <div className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4">Authority Badge</div>
-            <div className="text-4xl mb-4">🏆</div>
+            <Award className="w-8 h-8 mb-4 text-blue-500" strokeWidth={1.75} />
             <h4 className="font-black text-2xl uppercase tracking-tight mb-2">Charlie Morgan HighLevel Mastery</h4>
             <p className="text-gray-400 text-sm leading-relaxed">Built to handle advanced snapshots, pipelines, and automation logic.</p>
           </div>
 
           <div className="glass-card rounded-[2.5rem] border border-white/5 p-8">
             <div className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4">Academic Foundation</div>
-            <div className="text-4xl mb-4">🎓</div>
+            <GraduationCap className="w-8 h-8 mb-4 text-blue-500" strokeWidth={1.75} />
             <h4 className="font-black text-2xl uppercase tracking-tight mb-2">BS Computer Science (AI)</h4>
             <p className="text-gray-400 text-sm leading-relaxed">AI specialization with real integration experience.</p>
           </div>
 
           <div className="glass-card rounded-[2.5rem] border border-white/5 p-8">
             <div className="text-xs uppercase tracking-widest text-blue-400 font-bold mb-4">Industry Experience</div>
-            <div className="text-4xl mb-4">🏢</div>
+            <Building2 className="w-8 h-8 mb-4 text-blue-500" strokeWidth={1.75} />
             <h4 className="font-black text-2xl uppercase tracking-tight mb-2">OakStreet Technologies</h4>
             <p className="text-gray-400 text-sm leading-relaxed">Former Junior AI Developer—execution-first mindset.</p>
           </div>

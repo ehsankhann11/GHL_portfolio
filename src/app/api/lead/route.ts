@@ -1,13 +1,12 @@
 import { NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import { existsSync } from 'fs';
-import path from 'path';
+import { Resend } from 'resend';
+
+const NOTIFICATION_EMAIL = process.env.LEAD_NOTIFICATION_EMAIL || 'ehsanmarwat.dev@gmail.com';
 
 export async function POST(request: Request) {
   try {
     const data = await request.json();
 
-    // Validate required fields
     if (!data.fullName || !data.email || !data.businessName || !data.service) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -15,38 +14,42 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create leads directory if it doesn't exist
-    const leadsDir = path.join(process.cwd(), 'leads');
-    if (!existsSync(leadsDir)) {
-      await mkdir(leadsDir, { recursive: true });
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not configured — lead was not delivered.');
+      return NextResponse.json(
+        { error: 'Lead delivery is not configured' },
+        { status: 500 }
+      );
     }
 
-    // Save to JSON file
-    const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
-    const filename = `lead-${timestamp}.json`;
-    const filepath = path.join(leadsDir, filename);
-    
-    await writeFile(filepath, JSON.stringify({
-      ...data,
-      submittedAt: new Date().toISOString()
-    }, null, 2));
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Log to console (you can integrate with EmailJS, SendGrid, etc.)
-    console.log('🔔 NEW LEAD SUBMITTED:');
-    console.log('Name:', data.fullName);
-    console.log('Email:', data.email);
-    console.log('Business:', data.businessName);
-    console.log('Service:', data.service);
-    console.log('Budget:', data.budget || 'Not specified');
-    console.log('Details:', data.projectDetails || 'No details provided');
-    console.log('---');
+    const { error } = await resend.emails.send({
+      from: 'Portfolio Lead <onboarding@resend.dev>',
+      to: NOTIFICATION_EMAIL,
+      replyTo: data.email,
+      subject: `New lead: ${data.businessName} — ${data.service}`,
+      text: [
+        `Name: ${data.fullName}`,
+        `Email: ${data.email}`,
+        `Business: ${data.businessName}`,
+        `Service: ${data.service}`,
+        `Budget: ${data.budget || 'Not specified'}`,
+        `Details: ${data.projectDetails || 'No details provided'}`,
+      ].join('\n'),
+    });
 
-    // Here you can add email integration like EmailJS, SendGrid, etc.
-    // For now, we'll just return success
-    
-    return NextResponse.json({ 
-      success: true, 
-      message: 'Lead submitted successfully' 
+    if (error) {
+      console.error('Resend failed to send lead email:', error);
+      return NextResponse.json(
+        { error: 'Failed to deliver lead' },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      message: 'Lead submitted successfully',
     });
   } catch (error) {
     console.error('Error processing lead:', error);
@@ -56,4 +59,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

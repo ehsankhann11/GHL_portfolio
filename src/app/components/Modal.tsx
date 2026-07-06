@@ -13,6 +13,7 @@ interface ModalProps {
 export default function Modal({ isOpen, onClose, title = "Let's Get Started", preselectedService = '' }: ModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -30,23 +31,25 @@ export default function Modal({ isOpen, onClose, title = "Let's Get Started", pr
   }, [isOpen, preselectedService]);
 
   const services = [
-    { value: 'ghl-automation-800', label: 'GHL Automation Setup ($800)' },
-    { value: 'ai-automation-1700', label: 'AI Automation System ($1,700)' },
-    { value: 'ghl-va-1200', label: 'GHL VA Monthly ($1,200)' },
-    { value: 'conversion-funnel-1000', label: 'Conversion Funnel ($1,000)' },
-    { value: 'advanced-workflows-900', label: 'Advanced Workflows ($900)' },
     { value: 'custom-snapshot-600', label: 'Custom Snapshot ($600)' },
+    { value: 'ghl-automation-800', label: 'GHL Automation Setup ($800)' },
+    { value: 'advanced-workflows-900', label: 'Advanced Workflows ($900)' },
+    { value: 'conversion-funnel-1000', label: 'Conversion Funnel ($1,000)' },
+    { value: 'ai-automation-1700', label: 'AI Automation System ($1,700)' },
+    { value: 'embedded-partner-1200', label: 'Embedded Automation Partner ($1,200/mo)' },
   ];
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError('');
 
     try {
+      const serviceLabel = services.find((s) => s.value === formData.service)?.label || formData.service;
       const response = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, service: serviceLabel }),
       });
 
       if (response.ok) {
@@ -63,9 +66,12 @@ export default function Modal({ isOpen, onClose, title = "Let's Get Started", pr
             projectDetails: ''
           });
         }, 3000);
+      } else {
+        setSubmitError("Something went wrong sending your request. Please try WhatsApp or email instead — links below.");
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      setSubmitError("Something went wrong sending your request. Please try WhatsApp or email instead — links below.");
     } finally {
       setIsSubmitting(false);
     }
@@ -227,6 +233,19 @@ export default function Modal({ isOpen, onClose, title = "Let's Get Started", pr
                       'Submit Request'
                     )}
                   </button>
+
+                  {submitError && (
+                    <div className="rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                      {submitError}{' '}
+                      <a href="https://wa.me/923185164128" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-white">
+                        WhatsApp
+                      </a>{' '}
+                      /{' '}
+                      <a href="mailto:ehsanmarwat.dev@gmail.com" className="underline font-bold hover:text-white">
+                        Email
+                      </a>
+                    </div>
+                  )}
                 </form>
               )}
             </div>
